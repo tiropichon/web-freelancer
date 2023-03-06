@@ -1,0 +1,18 @@
+/* Hack para trabajar más fácil con rem */
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 16px; /* 1 rem = 10px */
+}
+/* Fin del Hack */
+
+.titulo {
+    text-align:center;
+    font-size: 3.8rem;
+}
+
+.titulo span {
+    font-size: 2rem;
+}
