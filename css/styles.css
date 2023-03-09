@@ -10,6 +10,11 @@
 /* Hack para trabajar más fácil con rem */
 html {
     font-size: 62.5%;
+    box-sizing:border-box; /* hack para Box Model */
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 body {
@@ -18,9 +23,20 @@ body {
 }
 /* Fin del Hack */
 
-.titulo {
-    text-align:center;
+h1 {
     font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1, h2, h3 {
+    text-align: center;
 }
 
 .titulo span {
@@ -30,6 +46,20 @@ body {
 .contenedor {
     max-width: 120rem;
     margin: 0 auto;
+}
+
+.boton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
 }
 
 .nav-bg {
@@ -58,6 +88,41 @@ body {
     color: var(--oscuro);
 }
 
+.hero {
+    background-image:url(../img/hero.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;
+    /*EL padre siempre positivon:relative. El hijo position:absolute*/
+}
+
+.contenido-hero {
+    /* sombra encima de hero.jpg*/
+    position: absolute;
+    /*background-color: rgba(0,0,0,.7); anterior */
+    background-color: rgb( 0 0 0 / 70% ); /* actual */
+    width: 100%;
+    height: 100%;
+
+    display:flex;
+    flex-direction: column;
+    align-items: center; /* Alinea verticalmente con flex-direction: column*/
+    justify-content: center;
+
+}
+
+.contenido-hero h2, 
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+.ubicacion {
+    display:flex;
+    align-items: flex-end; /* Alinea verticalmente con display: flex*/
+}
+
+
 /* Media Queries */
 @media (min-width: 768px) {
     .navegacion-principal {
@@ -68,7 +133,9 @@ body {
 
 /*telefonos*/
 @media (min-width: 480px) {
-    
+    .boton {
+        width: auto;
+    }
 }
 
 /*tablets*/
