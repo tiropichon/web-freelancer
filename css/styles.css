@@ -1,3 +1,12 @@
+/* pseudoselector: custom properties*/
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --gris: #757575;
+}
+
 /* Hack para trabajar más fácil con rem */
 html {
     font-size: 62.5%;
@@ -5,6 +14,7 @@ html {
 
 body {
     font-size: 16px; /* 1 rem = 10px */
+    font-family: 'Krub', sans-serif;
 }
 /* Fin del Hack */
 
@@ -15,4 +25,62 @@ body {
 
 .titulo span {
     font-size: 2rem;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.nav-bg {
+    background-color: var(--secundario);
+}
+
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+}
+
+/* pseudoclases: eventos de css */
+
+.navegacion-principal a {
+    display: block;
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.navegacion-principal a:hover {
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/*telefonos*/
+@media (min-width: 480px) {
+    
+}
+
+/*tablets*/
+@media (min-width: 768px) {
+    
+}
+
+/* laptop */
+@media (min-width: 1140px) {
+    
+}
+
+@media (min-width: 1400px) {
+    
 }
